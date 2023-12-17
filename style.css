@@ -1,0 +1,397 @@
+*::before, 
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(36, 100%, 99%);  
+}
+
+.screenFixed{
+    position: fixed;
+}
+
+/******** SLIDE-OUT MENU *******/
+nav{  /*The menu will only show up when the menu icon is clicked */
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background-color: hsl(36, 100%, 99%);
+    width: 70%;
+    height: 100vh;
+    display: none;   
+}
+nav.active{  /*when hamburger icon is click, the display property changes */
+    display: inline-block;
+}
+img#menuIcon:hover{
+    cursor: pointer;
+}
+#closeMenuIcon{
+    float: right;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+#closeMenuIcon:hover{
+    cursor: pointer;
+}
+nav ul{
+    list-style-type: none;
+    padding-left: 0px;
+    margin-top: 150px;
+}
+nav ul li{
+    padding: 10px 30px;
+    font-size: 20px;
+    color: hsl(240, 100%, 5%);
+}
+nav ul li:hover{
+    color:hsl(5, 85%, 63%);
+    cursor: pointer;
+}
+
+
+
+
+/********** HEADER ********/
+header{
+    padding: 30px 0px;
+    margin: 0px 17px;
+    overflow: hidden; /*Prevents parent div from collapse*/
+}
+#logo{
+    float: left;
+}
+#menuIcon{
+    float: right;
+    margin-top: 10px;
+}
+
+
+/******* HERO IMAGE *****/
+figure{
+    position: relative;
+    margin: 0px 17px;  /*same side margin*/ 
+}
+#mainArticleImgMobile{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;  
+}
+#mainArticleImg{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%; 
+    display: none;        
+}
+
+/***** HERO TITLE *****/
+.heroTitle{
+    margin: 0px 17px; /*same side margin*/ 
+
+}
+.heroTitle h1{
+    font-weight: 800;
+    font-size: 3em;
+    line-height: 49px;
+    padding: 25px 0px 0px;
+    margin: 0px;
+}
+
+
+/******** HERO CONTENT *******/
+figcaption{
+    margin: 0 17px;  /*same side margin*/ 
+}
+
+p.articleDescription{
+    margin: 0;
+    padding: 25px 0px 0px;
+    color:hsl(236, 13%, 42%); 
+    line-height: 26px;
+    font-size: 15px; 
+}
+
+
+/***** HERO CONTENT BUTTON *****/
+button{
+    border: none;
+    padding: 20px 45px;
+    margin-top: 25px;
+    background-color: hsl(5, 85%, 63%);
+    color:  hsl(36, 100%, 99%);
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+button:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+
+/***** MINI SNIPPETS OF ARTICLES *****/
+aside{
+    margin: 70px 17px;  /*new section so the margin is different*/ 
+    background-color: hsl(240, 100%, 5%);
+}
+.asideTitle{
+    color:hsl(35, 77%, 62%);
+    padding: 25px 17px 0px 17px;
+    font-size: 34px;
+    margin: 0;
+}
+.articleCard{
+    margin: 0 17px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.articleCard h4:hover{
+    color:hsl(35, 77%, 62%);
+}
+.articleBorder{
+    border-top: 1px solid hsl(233, 8%, 79%);
+    border-bottom: 1px solid hsl(233, 8%, 79%);
+}
+.articleCard h4{
+    color:hsl(36, 100%, 99%);
+    font-size: 20px;
+    margin: 0;
+}
+p.articleText{
+    color:hsl(233, 8%, 79%);
+    font-size: 15px;
+    line-height: 26px;
+    margin: 0;
+    padding-top: 8px;
+}
+
+/***** ARTICLES AT THE BOTTOM OF WEBPAGE ******/
+.bottomArticle{
+    display: flex;
+    margin: 0 17px 35px;
+    height: 152px;
+}
+.bottomArticle:last-child{
+    margin-bottom: 80px;
+}
+
+.bottomArticle figure,
+.bottomArticle figcaption{
+    margin: 0;
+    width: 100%;
+    
+}
+.bottomArticle figure{
+    width: 180px;
+}
+.articleImg{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%; 
+}
+.bottomArticle figcaption{
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-evenly;
+}
+
+h2{
+    color:hsl(233, 8%, 79%);
+    font-size: 32px;
+    margin: 0px 0px 0px;
+}
+h4{
+    color: hsl(240, 100%, 5%);
+   margin: 0;
+   margin-bottom: 9px;
+    font-size: 19px;
+}
+h4:hover{
+    color:hsl(5, 85%, 63%);
+    cursor: pointer;
+}
+
+.bottomArticle figcaption p{
+    font-size: 15px;
+    line-height: 26px;
+    color: hsl(236, 13%, 42%);
+    margin: 0px;
+}
+
+
+
+
+/********************* DESKTOP VERSION **********************/
+
+@media screen and (min-width:1050px){
+    body{
+        margin: 0;
+    }
+    
+    #menuIcon{display: none;} /*This hides the hamburger icon*/
+    #mainArticleImgMobile{display: none;} /*This hides the mobile hero image */
+    #closeMenuIcon{display: none} /*This hides the X icon */
+    .menuList { display: inline-block} /*This reveals the unorder list */
+
+    /**** Defining the Grid areas for layout ****/
+    .navContainer{grid-area: navContainer;}
+    .heroImg{grid-area: heroImg;}
+    .featuredArticlesContainer{grid-area: featuredArticlesContainer;}
+    .heroTitle{grid-area: heroTitle;}
+    .heroContent{grid-area:heroContent;}
+    .article1{grid-area: article1;}
+    .article2 {grid-area: article2;}
+    .article3 {grid-area: article3;}
+
+    /***** Layout of the main container for desktop version *****/
+    .grid-container{
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+        'navContainer navContainer navContainer'
+        'heroImg heroImg featuredArticlesContainer'
+        'heroTitle heroContent featuredArticlesContainer'
+        'article1 article2 article3';
+        column-gap: 25px;
+        row-gap: 15px;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /*** HEADER ***/
+    .navContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        margin:0;
+        margin-bottom: 23px;
+        overflow: visible;
+        max-width: 100%;
+    }
+    header{ /*logo is here*/
+        margin: 0px;;
+        overflow:visible; 
+        padding: 0px;
+    }
+    #logo, #menuIcon{
+        float: none;
+        margin: 0;
+    }
+    nav{ 
+        position: relative;
+        z-index: 0;
+        background-color: hsl(36, 100%, 99%);
+        width: auto;
+        height: auto; 
+    }
+    nav ul{
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px; 
+    }
+    nav ul li{
+        display: inline;
+        padding: 6px 6px;
+        margin: 10px; /*increase the margin if necessary*/
+        font-size: 15px;
+        color:hsl(236, 13%, 42%);    
+    }
+    nav ul li:last-child{
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    /**** HERO IMAGE ***/
+    .heroImg{
+        height: 250px;
+    }
+    .heroImg figure{
+        margin: 0;
+        height: 100%;
+    }
+    #mainArticleImg{
+        display: inline-block;
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;      
+    }
+
+   /**** HERO TITLE ****/
+    .heroTitle{
+        margin: 0px;  
+       
+    }
+    .heroTitle h1{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0px;
+        height: 100%;
+        line-height: 52px;
+    }
+
+    /**** HERO CONTENT ****/
+    figcaption{
+        margin: 0px; 
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    p.articleDescription{
+        margin: 0;
+        padding: 21px 0px 0px 0px;
+        /*padding: 25px 0px 0px; */   
+    }
+
+    /**** HERO BTN ****/
+    button{
+        width: 180px;
+        padding: 15px 15px;
+        font-size: 14px;
+    }
+
+    /**** MINI SNIPPETS OF FEATURED ARTICLES ****/
+    aside{
+        margin: 0px; 
+        height: 100%; 
+    }
+    .asideTitle{
+        font-size: 37px;
+    }
+
+    /*** ARTICLES AT THE BOTTOM OF WEBPAGE ****/
+    .bottomArticle{
+        margin: 0px;
+        margin-top: 45px;
+        margin-bottom: 0px; 
+    }
+    .bottomArticle:last-child{
+        margin-bottom: 0px;
+    }
+    
+}
+
+
+    
+/******** WIDER SCREENS ***********/
+@media screen and (min-width:1258px){
+    .grid-container{
+        width: 80%;
+    }
+}
+
